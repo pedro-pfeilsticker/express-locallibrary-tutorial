@@ -18,7 +18,7 @@ app.use(helmet());
 
 //  connecting to mongoDB
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb+srv://pedro:3bDPwRzn7u0kmwoL@cluster0.nm1bn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+var mongoDB = process.env.MONGODB_URI;
 
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 var db = mongoose.connection;
